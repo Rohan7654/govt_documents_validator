@@ -82,8 +82,7 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 24.0,
                   ),
                 ),
-                onPressed: () =>
-                    {print(_formKey.currentState.validate()), _submit()},
+                onPressed: () => _submit(),
               )
             ],
           ),
