@@ -13,6 +13,7 @@ String aadharNumber = 'xxxxxxxxxxxx';
 AadharValidator aadharValidator = new AadharValidator();
 isAadharNum = aadharValidator.validate(aadharNumber);
 ```
+
 # Using GSTValidator
 For verifying Goverment Document inputs in User Forms use the simple functions provided by this package.
 ```dart
@@ -30,3 +31,4 @@ bool isPAnNum;
 String panNumber = 'xxxxxxxxxx';
 PANValidator panValidator = new PANValidator();
 isPAnNum = panValidator.validate(aadharNumber);
+```
