@@ -23,8 +23,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var _formKey = GlobalKey<FormState>();
-  var isLoading = false;
-  AadharValidator av = new AadharValidator();
+  bool isAadharNum;
+  bool isGSTNum;
+  GSTValidator gstValidator = new GSTValidator();
+  AadharValidator aadharValidator = new AadharValidator();
   void _submit() {
     final isValid = _formKey.currentState.validate();
     if (!isValid) {
@@ -36,26 +38,59 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Form-Validation In Flutter"),
+        title: Text(
+          "Document Validation",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         elevation: 2.0,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        //form
         child: Form(
           key: _formKey,
           child: Column(
             children: <Widget>[
               TextFormField(
+                maxLength: 12,
                 cursorColor: Colors.green,
-                decoration: InputDecoration(labelText: 'Aadhar Number'),
+                decoration: InputDecoration(
+                  labelText: 'Aadhar Number',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25.0),
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                ),
                 onFieldSubmitted: (value) {},
                 validator: (value) {
-                  if (av.validate(value) == true) {
+                  if (aadharValidator.validate(value) == true) {
                     return null;
                   }
-                  return "Incorrect";
+                  return "Incorrect Aadhar Number";
+                },
+              ),
+              //box styling
+              SizedBox(
+                height: MediaQuery.of(context).size.width * 0.1,
+              ),
+              //text input
+              TextFormField(
+                maxLength: 14,
+                cursorColor: Colors.green,
+                decoration: InputDecoration(
+                  labelText: 'GST Number',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25.0),
+                    borderSide: BorderSide(),
+                  ),
+                ),
+                onFieldSubmitted: (value) {},
+                validator: (value) {
+                  if (gstValidator.validate(value) == true) {
+                    return null;
+                  }
+                  return "Incorrect GST Number";
                 },
               ),
               //box styling
@@ -71,7 +106,7 @@ class _HomePageState extends State<HomePage> {
                   horizontal: 10.0,
                 ),
                 child: Text(
-                  "Submit",
+                  "Verify",
                   style: TextStyle(
                     fontSize: 20.0,
                   ),
