@@ -1,6 +1,6 @@
 # example
 
-A new Flutter project.
+This file demonstartes the use of govt-documents_validator.
 
 ## Getting Started
 
