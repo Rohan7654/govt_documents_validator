@@ -1,5 +1,5 @@
 name: govt_documents_validator
-description: A new Flutter package project.
+description: This package provides an easy way to validate Indian Government Documents like Aadhar,PAN and GSTIN. This is often useful to avoid the use of RegEx for validating the user inputs which maynot work in some scenarios, this package written purely in dart will validate the numbers through CheckSum values.
 version: 0.0.1
 author: Rohan
 repository: https://github.com/Rohan7654/govt_documents_validator
