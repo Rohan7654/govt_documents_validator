@@ -1,8 +1,8 @@
 name: govt_documents_validator
 description: A new Flutter package project.
 version: 0.0.1
-author:
-homepage:
+author: Rohan
+repository: https://github.com/Rohan7654/govt_documents_validator
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
