@@ -4,6 +4,9 @@ This package provides an easy way to validate Indian Government Documents like A
 
 ## Example usage in User Forms
 
+https://user-images.githubusercontent.com/31805162/109400913-7d934180-7971-11eb-9354-70a7e52f7100.mp4
+ 
+This video demonstartes the simplest usage of this package in user forms.
 
 # Using AadharValidator
 For verifying Goverment Document inputs in User Forms use the simple functions provided by this package.
