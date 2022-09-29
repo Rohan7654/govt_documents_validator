@@ -38,7 +38,7 @@ int listElementsSum(List a) {
       sum += e;
     }
   }
-  return sum;
+  return sum.toInt();
 }
 
 class AadharValidator {
@@ -70,15 +70,15 @@ class AadharValidator {
 
 class PANValidator {
   bool validate(String panNum) {
-    String validMatch;
+    String? validMatch;
     RegExp re = RegExp("[A-Z]{5}[0-9]{4}[A-Z]{1}");
     if (panNum.length == 10) {
       Iterable<Match> match = re.allMatches(panNum);
       if (match.isNotEmpty) {
         for (Match m in match) {
-          validMatch = m.group(0);
+          validMatch = m.group(0) ?? '';
         }
-        if (validMatch.isNotEmpty) {
+        if (validMatch != null && validMatch.isNotEmpty) {
           return true;
         }
         return false;
